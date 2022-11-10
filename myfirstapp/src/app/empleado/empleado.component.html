@@ -1,0 +1,19 @@
+<p>Nombre: {{ nombre }}</p>
+<p>Apellido: {{ apellido }}</p>
+<p>Edad: {{ edad < 18 ? 'menor de edad' : 'mayor de edad'}}</p>
+<p>Empresa: {{ empresa.value }}</p>
+<p>Prueba de getter: {{getPrueba()}}</p>
+Introduce la empresa: <input type="text" #empresa>
+<br>
+<br>
+<input type="button" value="Buttom" (click)="accion(empresa.value)">
+<br>
+<br>
+<input type="text" [disabled]="habilitacion">
+<br>
+<br>
+{{textRegister}}
+<br>
+Registrado: <input type="radio" value="si" name="radio" id="registro" [checked]="userRegister" (click)="showWindows($event)">
+No Registrado: <input type="radio" value="no" name="radio" (click)="showWindows($event)">
+{{getUserRegister()}}
