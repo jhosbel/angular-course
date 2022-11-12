@@ -1,12 +1,15 @@
 <p>Nombre: {{ nombre }}</p>
 <p>Apellido: {{ apellido }}</p>
 <p>Edad: {{ edad < 18 ? 'menor de edad' : 'mayor de edad'}}</p>
-<p>Empresa: {{ empresa.value }}</p>
+<p>Empresa: {{ empresa }}</p>
 <p>Prueba de getter: {{getPrueba()}}</p>
-Introduce la empresa: <input type="text" #empresa>
+<!-- Introduce la empresa: <input type="text" #empresa> -->
 <br>
 <br>
-<input type="button" value="Buttom" (click)="accion(empresa.value)">
+<!-- <input type="button" value="Buttom" (click)="accion(empresa.value)"> -->
+
+Introduce la Empresa: <input type="text" [(ngModel)]="empresa">
+
 <br>
 <br>
 <input type="text" [disabled]="habilitacion">
@@ -15,5 +18,6 @@ Introduce la empresa: <input type="text" #empresa>
 {{textRegister}}
 <br>
 Registrado: <input type="radio" value="si" name="radio" id="registro" [checked]="userRegister" (click)="showWindows($event)">
+<br>
 No Registrado: <input type="radio" value="no" name="radio" (click)="showWindows($event)">
 {{getUserRegister()}}

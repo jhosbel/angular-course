@@ -10,8 +10,9 @@ export class EmpleadoComponent implements OnInit {
   nombre = 'Jhosbel'
   apellido = 'Vargas'
   edad = 30
-  //empresa = 'Google'
+  empresa = 'Facebook'
   prueba = 'Esto es Prueba de Getter'
+
   getPrueba(){
     return this.prueba
   }

@@ -3,16 +3,15 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { EmpleadosComponent } from './components/empleados/empleados.component';
-import { EmpleadoComponent } from './empleado/empleado.component';
+import { EmpleadoHijoCComponent } from './empleado-hijo-c/empleado-hijo-c.component';
+import { CaracteristicasEmpleadoCComponent } from './caracteristicas-empleado-c/caracteristicas-empleado-c.component';
 
 @NgModule({
-  declarations: [		
+  declarations: [
     AppComponent,
-    EmpleadosComponent,
-    EmpleadoComponent,
-    EmpleadoComponent
-   ],
+    EmpleadoHijoCComponent,
+    CaracteristicasEmpleadoCComponent
+  ],
   imports: [
     BrowserModule,
     FormsModule
