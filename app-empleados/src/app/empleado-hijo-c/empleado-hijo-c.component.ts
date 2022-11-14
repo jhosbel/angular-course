@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Empleado } from '../empleado.model';
+import { ServicioEmpleadosService } from '../servicio-empleados.service';
 
 @Component({
   selector: 'app-empleado-hijo-c',
@@ -15,8 +16,8 @@ export class EmpleadoHijoCComponent implements OnInit {
 
   @Input() i:Empleado;
   @Input() indice:number;
-
-  constructor() { }
+  //aca esta el constructor que sirve para poder mostrar la ventana alert cada ves que se ejecuta la funcion agregarCaracteristicas
+  constructor(private miMensaje:ServicioEmpleadosService) { }
 
   ngOnInit(): void {
   }
@@ -24,6 +25,7 @@ export class EmpleadoHijoCComponent implements OnInit {
   arrayCaracteristicas = ['']
 
   agregarCaracteristica(nuevaCaracteristica: string){
+    this.miMensaje.muestraMensaje('Caracteristica: ' + nuevaCaracteristica) // agregar mensaje alert con el servicio creado antes, ver servicio-empleados.services.ts, agregar el servicio en el constructor de arriba
     this.arrayCaracteristicas.push(nuevaCaracteristica)
   }
 

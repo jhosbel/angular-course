@@ -2,12 +2,20 @@
     <div class="row">
       <div class="col">
         <div >
+          <span>Pulsar en el Nombre para actualizar datos.</span><br>
           {{indice+1}} - {{i.nombre}} {{i.apellido}} {{i.cargo}} {{i.salario}}
+          <a [routerLink]="['/actualizar', indice]" [queryParams]="{accion: '1'}">
+            Actualizar
+          </a>
+          &nbsp;&nbsp;
+          <a [routerLink]="['/actualizar', indice]" [queryParams]="{accion: '2'}">
+            Borrar
+          </a>
         </div>
+        <app-caracteristicas-empleado-c (caracteristicasEmpleados)="agregarCaracteristica($event)"></app-caracteristicas-empleado-c><br>
         <ul style="list-style: none;">
           <li *ngFor="let caracteristica of arrayCaracteristicas">{{caracteristica}}</li>
         </ul>
-        <app-caracteristicas-empleado-c (caracteristicasEmpleados)="agregarCaracteristica($event)"></app-caracteristicas-empleado-c>
       </div>
     </div>
   </div>

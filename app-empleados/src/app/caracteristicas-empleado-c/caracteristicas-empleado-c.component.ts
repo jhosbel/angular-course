@@ -10,7 +10,7 @@ export class CaracteristicasEmpleadoCComponent implements OnInit {
   @Output() caracteristicasEmpleados = new EventEmitter<string>()
 
   agregarCaracteristicas(value: string){
-    this.caracteristicasEmpleados.emit(value)
+    //this.caracteristicasEmpleados.emit(value)
   }
 
   constructor() { }

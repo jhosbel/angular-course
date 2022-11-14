@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="col">
+    <h1 style="text-align: center;">{{title}}</h1><br><br>
+    <form class="form-group row">
+      <div class="form-group col-md-3">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control" [(ngModel)]="cuadroNombre">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="nombre">Apellido</label>
+        <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="form-control" [(ngModel)]="cuadroApellido">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="nombre">Cargo:</label>
+        <input type="text" name="cargo" id="cargo" placeholder="Cargo" class="form-control" [(ngModel)]="cuadroCargo">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="nombre">Salario:</label>
+        <input type="text" name="salario" id="salario" placeholder="Salario" class="form-control" [(ngModel)]="cuadroSalario">
+      </div>
+      <div class="col">
+        <button type="submit" class="btn btn-primary" (click)="agregarEmpleado()" style="margin-top: 35px;">Agregar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<br><br><br>
+<!-- para pasar info de un componente padre al hijo hay que agregar directiva input como se ve abajo ejemplo [i]="i", hay que pasar el iterador del for hacia el otro componente, al componente hijo.
+ver bien el ejercicio, todo tiene que estar escrito pegado como abajo eje = [i]="i"-->
+<app-empleado-hijo-c *ngFor="let i of empleados; index as indice" [i]="i" [indice]="indice"></app-empleado-hijo-c>
